@@ -1,0 +1,926 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1730">
+
+<title>Fahri Arfan Nur Alif | Personal Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f2f5fb;
+  --surface: #ffffff;
+  --navy: #0b1730;
+  --text: #172944;
+  --muted: #75839a;
+  --teal: #53dfc0;
+  --teal-dark: #168e7b;
+  --line: #e8edf4;
+  --radius: 22px;
+  --display: "Space Grotesk", sans-serif;
+  --body: "DM Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 0% 0%, #e2edf9 0, transparent 36%),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--teal);
+  color: var(--navy);
+}
+
+/* NAVBAR */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(242, 245, 251, .88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(220, 228, 239, .8);
+}
+
+.nav-inner {
+  max-width: 1160px;
+  margin: auto;
+  padding: 15px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font: 700 21px var(--display);
+  letter-spacing: -1px;
+  color: var(--navy);
+}
+
+.logo span,
+.footer-brand span {
+  color: var(--teal-dark);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #66758d;
+}
+
+.nav-links a {
+  transition: color .2s;
+}
+
+.nav-links a:hover {
+  color: var(--teal-dark);
+}
+
+/* LAYOUT */
+
+.container {
+  max-width: 1160px;
+  padding: 38px 24px 60px;
+  margin: auto;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 27px;
+  align-items: start;
+}
+
+.sidebar {
+  position: sticky;
+  top: 88px;
+  display: grid;
+  gap: 18px;
+}
+
+/* KARTU PROFIL */
+
+.profile-card {
+  background: var(--navy);
+  color: white;
+  padding: 28px;
+  border-radius: 28px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 20px 55px rgba(11, 23, 48, .14);
+}
+
+.profile-card::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(83, 223, 192, .18);
+  border-radius: 50%;
+  top: -130px;
+  right: -100px;
+  box-shadow:
+    0 0 0 25px rgba(83, 223, 192, .035),
+    0 0 0 50px rgba(83, 223, 192, .025);
+  z-index: -1;
+}
+
+.profile-card::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  bottom: -110px;
+  left: -70px;
+  background: var(--teal);
+  filter: blur(90px);
+  opacity: .22;
+  z-index: -1;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #b9c8dc;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--teal);
+  box-shadow: 0 0 12px rgba(83, 223, 192, .7);
+}
+
+/* FOTO PROFIL */
+
+.avatar-wrap {
+  margin: 28px 0 23px;
+  width: 132px;
+  height: 132px;
+  border-radius: 32px;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--teal), #6587ef);
+  transform: rotate(-3deg);
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 29px;
+  background: #d8eee9;
+  overflow: hidden;
+  transform: rotate(3deg);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile-card h1 {
+  font: 700 clamp(27px, 3vw, 34px)/1.12 var(--display);
+  letter-spacing: -1.5px;
+  margin-bottom: 12px;
+}
+
+.profile-card h1 span {
+  color: var(--teal);
+}
+
+.role {
+  color: #bac8dc;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.profile-divider {
+  height: 1px;
+  background: rgba(255,255,255,.12);
+  margin: 25px 0;
+}
+
+.contact-list {
+  list-style: none;
+  display: grid;
+  gap: 17px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  width: 37px;
+  height: 37px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(255,255,255,.08);
+  color: var(--teal);
+  font-size: 16px;
+}
+
+.contact-label {
+  display: block;
+  color: #8fa2bb;
+  font-size: 11px;
+  margin-bottom: 1px;
+}
+
+.contact-value {
+  display: block;
+  color: white;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.contact-value:hover {
+  color: var(--teal);
+}
+
+.profile-note {
+  margin-top: 24px;
+  padding: 14px;
+  background: rgba(255,255,255,.055);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 15px;
+  color: #b6c6d9;
+  font-size: 12px;
+}
+
+/* PROFIL SINGKAT */
+
+.quick-card {
+  background: white;
+  padding: 22px;
+  border-radius: 22px;
+  border: 1px solid var(--line);
+}
+
+.eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--teal-dark);
+}
+
+.quick-card h2 {
+  font: 700 19px var(--display);
+  margin: 5px 0 16px;
+}
+
+.quick-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.stat {
+  background: #f4f7fb;
+  padding: 14px;
+  border-radius: 14px;
+}
+
+.stat-number {
+  display: block;
+  font: 700 23px var(--display);
+  color: var(--navy);
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* KONTEN UTAMA */
+
+.main-content {
+  display: grid;
+  gap: 22px;
+  min-width: 0;
+}
+
+.panel {
+  background: var(--surface);
+  padding: 29px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 5px 24px rgba(24, 47, 79, .025);
+  min-width: 0;
+  scroll-margin-top: 88px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 21px;
+}
+
+.heading-icon {
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  background: #e7f7f3;
+  color: var(--teal-dark);
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+.section-heading h2 {
+  font: 700 22px var(--display);
+  letter-spacing: -.6px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+/* TENTANG SAYA */
+
+.intro {
+  font-size: 14px;
+  color: #63738a;
+  line-height: 2;
+}
+
+.intro strong {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.highlight {
+  color: var(--teal-dark);
+  font-weight: 700;
+}
+
+.quote {
+  border-left: 3px solid var(--teal);
+  padding: 12px 16px;
+  margin-top: 20px;
+  background: #f3faf8;
+  color: #456c68;
+  border-radius: 0 12px 12px 0;
+  font-size: 13px;
+}
+
+/* DATA DIRI */
+
+.data-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 28px;
+}
+
+.data-item {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+  min-width: 0;
+}
+
+.data-label {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.data-value {
+  display: block;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* PENDIDIKAN */
+
+.timeline {
+  list-style: none;
+  position: relative;
+  margin-left: 5px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 12px;
+  left: 9px;
+  width: 2px;
+  background: #dcefe9;
+}
+
+.timeline li {
+  position: relative;
+  padding: 0 0 27px 35px;
+}
+
+.timeline li:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 2px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background: var(--teal);
+  border: 4px solid #e7f7f3;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-year {
+  display: inline-block;
+  color: var(--teal-dark);
+  background: #eaf8f4;
+  padding: 3px 10px;
+  border-radius: 7px;
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.timeline h3 {
+  font: 700 16px var(--display);
+  color: var(--navy);
+}
+
+.timeline p {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+/* HOBI */
+
+.chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.chips li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  background: #f2f6fa;
+  border: 1px solid #e8eef4;
+  color: #344963;
+  border-radius: 11px;
+  font-size: 11px;
+  font-weight: 600;
+  transition: .2s ease;
+}
+
+.chips li:hover {
+  background: #e7f7f3;
+  border-color: #b8e9dd;
+  transform: translateY(-2px);
+}
+
+.chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal-dark);
+}
+
+/* FOOTER */
+
+footer {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #8290a5;
+  font-size: 11px;
+}
+
+.footer-brand {
+  font: 700 14px var(--display);
+  color: var(--navy);
+}
+
+.back-top {
+  color: var(--teal-dark);
+  font-weight: 700;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+  .layout {
+    grid-template-columns: 290px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .profile-card {
+    padding: 23px;
+  }
+
+  .panel {
+    padding: 23px;
+  }
+
+  .data-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .nav-inner {
+    padding: 13px 18px;
+  }
+
+  .nav-links {
+    gap: 13px;
+    font-size: 11px;
+  }
+
+  .container {
+    padding: 22px 15px 40px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .profile-card {
+    padding: 25px;
+  }
+
+  .avatar-wrap {
+    width: 116px;
+    height: 116px;
+    margin: 24px 0 20px;
+  }
+
+  .profile-card h1 {
+    font-size: 31px;
+  }
+
+  .quick-card {
+    padding: 20px;
+  }
+
+  .quick-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .main-content {
+    gap: 16px;
+  }
+
+  .panel {
+    padding: 22px 19px;
+    border-radius: 19px;
+  }
+
+  .section-heading h2 {
+    font-size: 20px;
+  }
+
+  footer {
+    padding: 0 18px 24px;
+  }
+}
+
+@media (max-width: 390px) {
+  .nav-links {
+    gap: 9px;
+    font-size: 10px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .section-heading {
+    gap: 10px;
+  }
+
+  .heading-icon {
+    width: 39px;
+    height: 39px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body id="top">
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="logo" href="#top">Fahri<span>.</span></a>
+
+    <div class="nav-links">
+      <a href="#tentang">Tentang</a>
+      <a href="#biodata">Biodata</a>
+      <a href="#pendidikan">Pendidikan</a>
+      <a href="#minat">Hobi</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="layout">
+
+    <!-- SIDEBAR PROFIL -->
+    <aside class="sidebar">
+
+      <section class="profile-card">
+        <div class="status">
+          <span class="status-dot"></span>
+          PERSONAL PROFILE
+        </div>
+
+        <!-- FOTO PROFIL -->
+        <div class="avatar-wrap">
+          <div class="avatar">
+            <img
+              src="Foto fahri.jpeg"
+              alt="Foto profil Fahri Arfan Nur Alif"
+              loading="eager"
+            >
+          </div>
+        </div>
+
+        <h1>Fahri Arfan<br><span>Nur Alif.</span></h1>
+
+        <p class="role">
+          Pelajar SMK 3 Perguruan Cikini<br>
+          Jakarta Selatan, Indonesia
+        </p>
+
+        <div class="profile-divider"></div>
+
+        <ul class="contact-list">
+          <li class="contact-item">
+            <div class="contact-icon">✉</div>
+            <div>
+              <span class="contact-label">EMAIL</span>
+              <a class="contact-value"
+                 href="mailto:fahriarfanuralif@email.com">
+                fahriarfanuralif@email.com
+              </a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="contact-icon">◎</div>
+            <div>
+              <span class="contact-label">INSTAGRAM</span>
+              <a class="contact-value"
+                 href="https://www.instagram.com/fanuralif?xtok=MWE0bTY3emphczJkMw=="
+                 target="_blank"
+                 rel="noopener noreferrer">
+                @fanuralif
+              </a>
+            </div>
+          </li>
+        </ul>
+
+        <div class="profile-note">
+          ✦ Terus belajar, berkembang, dan menciptakan hal baru.
+        </div>
+      </section>
+
+      <!-- PROFIL SINGKAT -->
+      <section class="quick-card">
+        <span class="eyebrow">A LITTLE ABOUT ME</span>
+        <h2>Profil singkat</h2>
+
+        <div class="quick-stats">
+          <div class="stat">
+            <span class="stat-number">01</span>
+            <span class="stat-label">Pelajar SMK</span>
+          </div>
+
+          <div class="stat">
+            <span class="stat-number">ID</span>
+            <span class="stat-label">Indonesia</span>
+          </div>
+        </div>
+      </section>
+
+    </aside>
+
+    <!-- KONTEN UTAMA -->
+    <main class="main-content">
+
+      <!-- TENTANG SAYA -->
+      <section class="panel" id="tentang">
+        <div class="section-heading">
+          <div class="heading-icon">✦</div>
+          <div>
+            <h2>Tentang Saya</h2>
+            <p>Kenali saya lebih dekat</p>
+          </div>
+        </div>
+
+        <p class="intro">
+          Halo! Saya <strong>Fahri Arfan Nur Alif</strong>, seorang
+          pelajar yang sedang menempuh pendidikan di
+          <span class="highlight">SMK 3 Perguruan Cikini</span>.
+          Saya ingin terus mengembangkan pengetahuan, meningkatkan
+          kemampuan diri, dan mendapatkan pengalaman baru.
+          Bagi saya, setiap proses belajar adalah kesempatan
+          untuk menjadi lebih baik dan meraih cita-cita.
+        </p>
+
+        <div class="quote">
+          "Terus berkembang hari ini untuk menjadi versi terbaik
+          dari diri sendiri di masa depan."
+        </div>
+      </section>
+
+      <!-- DATA DIRI -->
+      <section class="panel" id="biodata">
+        <div class="section-heading">
+          <div class="heading-icon">♧</div>
+          <div>
+            <h2>Data Diri</h2>
+            <p>Informasi pribadi</p>
+          </div>
+        </div>
+
+        <div class="data-grid">
+          <div class="data-item">
+            <span class="data-label">Nama lengkap</span>
+            <span class="data-value">Fahri Arfan Nur Alif</span>
+          </div>
+
+          <div class="data-item">
+            <span class="data-label">Nama panggilan</span>
+            <span class="data-value">Fahri</span>
+          </div>
+
+          <div class="data-item">
+            <span class="data-label">Tempat, tanggal lahir</span>
+            <span class="data-value">Grobogan, 3 Desember 2009</span>
+          </div>
+
+          <div class="data-item">
+            <span class="data-label">Jenis kelamin</span>
+            <span class="data-value">Laki-laki</span>
+          </div>
+
+          <div class="data-item">
+            <span class="data-label">Agama</span>
+            <span class="data-value">Islam</span>
+          </div>
+
+          <div class="data-item">
+            <span class="data-label">Kewarganegaraan</span>
+            <span class="data-value">Indonesia</span>
+          </div>
+
+          <div class="data-item">
+            <span class="data-label">Alamat</span>
+            <span class="data-value">
+              Jl. Kecapi V, Jagakarsa, Jakarta Selatan
+            </span>
+          </div>
+
+          <div class="data-item">
+            <span class="data-label">Status</span>
+            <span class="data-value">Pelajar SMK</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIWAYAT PENDIDIKAN -->
+      <section class="panel" id="pendidikan">
+        <div class="section-heading">
+          <div class="heading-icon">⌂</div>
+          <div>
+            <h2>Riwayat Pendidikan</h2>
+            <p>Perjalanan pendidikan saya</p>
+          </div>
+        </div>
+
+        <ol class="timeline">
+          <li>
+            <span class="timeline-dot"></span>
+            <span class="timeline-year"> 2024 – Sekarang</span>
+            <h3>SMK 3 Perguruan Cikini</h3>
+            <p>Sekolah Menengah Kejuruan</p>
+          </li>
+
+          <li>
+            <span class="timeline-dot"></span>
+            <span class="timeline-year">2021 – 2024</span>
+            <h3>Sekolah Menengah Pertama</h3>
+            <p>Nama sekolah dapat disesuaikan</p>
+          </li>
+
+          <li>
+            <span class="timeline-dot"></span>
+            <span class="timeline-year">2015 – 2021</span>
+            <h3>Sekolah Dasar</h3>
+            <p>Nama sekolah dapat disesuaikan</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- HOBI -->
+      <section class="panel" id="minat">
+        <div class="section-heading">
+          <div class="heading-icon">♡</div>
+          <div>
+            <h2>Hobi</h2>
+            <p>Hal yang saya sukai</p>
+          </div>
+        </div>
+
+        <ul class="chips">
+          <li><span class="chip-dot"></span>Bermain Bola</li>
+          <li><span class="chip-dot"></span>Berenang</li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">Fahri<span>.</span></span>
+  <span>© 2026 Fahri Arfan Nur Alif</span>
+  <a class="back-top" href="#top">Kembali ke atas ↑</a>
+</footer>
+
+</body>
+</html>
